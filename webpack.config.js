@@ -1,5 +1,5 @@
 /**
- * Created by Administrator on 2017/3/30.
+ * Created by Administrator on 2017/5/7.
  */
 var path = require('path');
 
@@ -8,26 +8,6 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, 'build'),
 		filename: 'bundle.js',
-		publicPath:'/assets/'
-	},
-	module:{
-		loaders:[
-			{
-				test: /\.jsx?$/,
-				exclude: /node_modules/,
-				loader: 'babel-loader',
-				query:{
-					presets:['es2015','react']
-				}
-			},
-			{
-				test: /\.(png|jpg|gif)$/,
-				loader: 'url-loader?limit=8192'
-			},
-			{
-				test: /\.css$/,
-				loader: 'style!css'
-			}
-		]
+		publicPath: '/build/'
 	}
-}
+};
