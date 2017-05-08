@@ -120,10 +120,12 @@ export function isEqual(a, b) {
  * @returns {boolean}
  */
 export function in_array(obj, arr){
-	if(isEmpty(arr))
+	if(isEmpty(arr)){
 		return false;
-	if(!isArray(arr))
+	}
+	if(!isArray(arr)){
 		return false;
+	}
 	var i = arr.length;
 	while (i--) {
 		if (arr[i] == obj)
@@ -139,9 +141,12 @@ export function in_array(obj, arr){
  */
 export function array_remove(obj, arr){
 	for(var i=0;i < arr.length;i++) {
-		if(obj == arr[i])
-			arr.splice(i,1)
+		if(obj == arr[i]){
+			arr.splice(i,1);
+		}
+
 	}
+	return arr;
 }
 
 /**
@@ -151,8 +156,9 @@ export function array_remove(obj, arr){
  */
 export function key_arr(obj){
 	let res = [];
-	for(let i in obj)
+	for(let i in obj){
 		res.push(i);
+	}
 	return res;
 }
 
@@ -161,7 +167,7 @@ export function key_arr(obj){
  * @returns {max}
  */
 export function s_max(arr, default_res = 0){
-	if(typeof arr !== "object" || count(arr) <= 1)
+	if(typeof arr !== "object" || count(arr) <= 1 || !isArray(arr))
 		return default_res;
 	let max = default_res;
 	for(let i in arr){
@@ -177,8 +183,11 @@ export function s_max(arr, default_res = 0){
  * @param str
  * @return str
  */
-export function replaceAll(str,oldString,newString){
-	str = str.replace(new RegExp(oldString,"gm"),newString)
+export function replaceAll(str,oldString='',newString=''){
+	if (typeof str !== "string"){
+		return str;
+	}
+	str = str.replace(new RegExp(oldString,"gm"),newString);
 	return str
 }
 
@@ -188,6 +197,9 @@ export function replaceAll(str,oldString,newString){
  * @return str
  */
 export function format_str(str){
+	if (typeof str !== "string"){
+		return str;
+	}
 	str = str.replace(/\s/g, "");
 	str = str.replace(/[\n]/g,"")
 	str = str.replace(/[\r]/g,"")
