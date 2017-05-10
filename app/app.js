@@ -4,14 +4,15 @@
 import React from "react";
 import { render } from "react-dom";
 import { Row, Col } from "antd";
-import "./utilTest/variable_test";
+import "./test/variable_test";
+import SInputTest from "./test/SInput_test";
 
 class HelloWorld extends React.Component{
 	render(){
 		return (
 			<div>
 				<Row>
-					<Col span={2}>Holle World!</Col>
+					<Col span={2}><SInputTest/></Col>
 				</Row>
 			</div>
 		);
