@@ -3,7 +3,7 @@
  */
 import React from "react";
 import { render } from "react-dom";
-import { Row, Col } from "antd";
+import { Row, Col, Button } from "antd";
 import "./test/variable_test";
 import SInputTest from "./test/SInput_test";
 
@@ -13,6 +13,12 @@ class HelloWorld extends React.Component{
 			<div>
 				<Row>
 					<Col span={2}><SInputTest/></Col>
+					<Col span={2}>
+						<Button
+							type="primary"
+							size="small"
+						>按键</Button>
+					</Col>
 				</Row>
 			</div>
 		);
